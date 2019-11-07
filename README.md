@@ -26,11 +26,11 @@ What kind of experience do you want the player to have with your game? Are they 
 
 #### Core Diagram
 
-1.  Core Mechaninc
+1.  Core Mechanic
 
     -   The core mechanic in a game will usually be the purposeful interaction that occurs the most frequently. In a platforming game, this is usually jumping. In a shooter, it is usually shooting. In a racing game, it will be driving. Another way to determine the core mechanic is, if without it, you wouldn’t be able to play the game at all.
 
-2.  Secondary Mechancis
+2.  Secondary Mechanics
 
     -   Duplicate ingredients that are limes
 
