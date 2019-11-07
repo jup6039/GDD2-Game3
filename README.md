@@ -22,25 +22,28 @@
 
 #### Target Player Exerience
 
-What kind of experience do you want the player to have with your game? Are they going to have to outsmart their enemies, explore a new world. Do not list the game’s mechanics or features and do not use the word “UNIQUE”.
+Too Many Limes is a platforming puzzle-cooking game. Throughout the game, players will be tasked with completing a certain recipe by gathering the required ingredients, all while trying to keep the many, many limes from getting in.
 
 #### Core Diagram
 
 1.  Core Mechanic
 
-    -   The core mechanic in a game will usually be the purposeful interaction that occurs the most frequently. In a platforming game, this is usually jumping. In a shooter, it is usually shooting. In a racing game, it will be driving. Another way to determine the core mechanic is, if without it, you wouldn’t be able to play the game at all.
+    -   Getting ingredients for a given recipe while avoiding limes
 
 2.  Secondary Mechanics
 
     -   Duplicate ingredients that are limes
+    -   Platforming/Puzzle levels
 
 3.  Progression
 
-    -   Progression systems form the mechanical envelope of the game, being the source of change within the game system at a holistic level.
+    -   The game starts out rather normally, with a regular kitchen and an average amount of limes
+    -   The first level introduces you to the basic mechanics of picking up the ingredients you need and adding them to the pot in the center of the kitchen
+    -   As it progresses, the levels start to get more chaotic and crazy, adding in strange platforming segments, false ingredients to lead you astray, and, of course, FAR more limes
 
 4.  Narrative
 
-    -   The Narrative layer is the outer most layer that puts all the inner layers within it into context.
+    -   You are a chef working at a somewhat popular restaurant. However, there was an error in your latest shipment of cooking supplies: all of the ingredients were turned into limes! Now you have to deal with the many limes trying to interfere with your work.
 
 #### Minimal Viable Interaction
 
