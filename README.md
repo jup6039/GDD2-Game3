@@ -51,7 +51,7 @@ For the MVI, we will be creating the first level or two of the game. This will a
 
 #### References
 
-    -   Overcooked
-        -   Overcooked is a puzzle-cooking game, and serves as an inspiration for theming and level design.
-    -   Mother Simulator
-        -   Mother Simulator is a first-person game where you are a mother tasked with taking care of your baby. The game takes a turn when it starts adding bizarre side mechanics that attempt to interfere with your regular tasks, such as aliens that abduct your baby if you leave it alone for too long. This game serves as an inspiration for the side mechanics we want to put in this game to add variety and wackiness to the game.
+1.   Overcooked
+    -   Overcooked is a puzzle-cooking game, and serves as an inspiration for theming and level design.
+2.   Mother Simulator
+    -   Mother Simulator is a first-person game where you are a mother tasked with taking care of your baby. The game takes a turn when it starts adding bizarre side mechanics that attempt to interfere with your regular tasks, such as aliens that abduct your baby if you leave it alone for too long. This game serves as an inspiration for the side mechanics we want to put in this game to add variety and wackiness to the game.
