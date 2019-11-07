@@ -48,4 +48,5 @@ What will be in your MVI? What will the player be able to do? Why only this? We 
 
 #### References
 
-Pease add a short description of how this is relevant to your game (mechanic, art, theme, etc.). There is no limit to how many references you can have.
+    -   Mother Simulator
+        -   Taking simple mechanics and adding twists to create challenges
