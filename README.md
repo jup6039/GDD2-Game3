@@ -4,16 +4,17 @@
 
 | Version Control Master | Scrum Master    |
 | ---------------------- | --------------- |
-| Jae Pagulayan          | Name            |
-| jup6039                | RIT username    |
-| Discord name           | Discord name    |
-| GitHub username        | GitHub username |
+| Jae Pagulayan          | Cole Boggan     |
+| jup6039                | cxb6159         |
+| SFGxGamer              | Coletrain9903   |
+| jup6039                | coletrain9903   |
 
 #### Keywords
 
--   Adjectives
--   Max 10
--   Capture key aspects of the idea
+-   Whimsical
+-   Exciting
+-   Colorful
+-   Chaotic
 
 #### Platforms(s)
 
