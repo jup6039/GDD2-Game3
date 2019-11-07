@@ -47,9 +47,11 @@ Too Many Limes is a platforming puzzle-cooking game. Throughout the game, player
 
 #### Minimal Viable Interaction
 
-What will be in your MVI? What will the player be able to do? Why only this? We may have a back and forth on this because this will be what I use to measure if you delivered an MVI.
+For the MVI, we will be creating the first level or two of the game. This will allow us to create the base mechanics required for this game, such as picking up objects, spawning the correct ingredients, and determining whether you are adding the correct ingredients or not.
 
 #### References
 
+    -   Overcooked
+        -   Overcooked is a puzzle-cooking game, and serves as an inspiration for theming and level design.
     -   Mother Simulator
-        -   Taking simple mechanics and adding twists to create challenges
+        -   Mother Simulator is a first-person game where you are a mother tasked with taking care of your baby. The game takes a turn when it starts adding bizarre side mechanics that attempt to interfere with your regular tasks, such as aliens that abduct your baby if you leave it alone for too long. This game serves as an inspiration for the side mechanics we want to put in this game to add variety and wackiness to the game.
