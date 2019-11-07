@@ -18,7 +18,7 @@
 
 #### Platforms(s)
 
--   List each
+-   PC
 
 #### Target Player Exerience
 
@@ -32,9 +32,7 @@ What kind of experience do you want the player to have with your game? Are they 
 
 2.  Secondary Mechancis
 
-    -   The secondary mechanics are the interactions that happen less frequently. They could even be layered out from more frequent to least frequent.
-    -   List each
-
+    -   Duplicate ingredients that are limes
 
 3.  Progression
 
