@@ -628,7 +628,7 @@ MonoBehaviour:
   player: {fileID: 2028038657}
   pickUp: {fileID: 1527825576}
   playerCamera: {fileID: 1705837672}
-  grabDist: 5
+  grabDist: 2.85
   pickupTag: Pickup
 --- !u!4 &1217753260
 Transform:
