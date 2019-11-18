@@ -13,6 +13,8 @@ public class PickUp : MonoBehaviour
     public float grabDist;
     public string pickupTag;
 
+    public float holdFactor = 0.5f;
+
     // Private
     private Vector3 oldPosition;
     private Vector3 position;
@@ -105,7 +107,7 @@ public class PickUp : MonoBehaviour
         if (holding)
         {
             position = player.transform.position + (holdDist * forward);
-            position.y += 0.5f;
+            position.y += holdFactor;
             pickUp.GetComponent<Rigidbody>().MovePosition(position);
             pickUp.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
