@@ -24,6 +24,7 @@ public class PickUp : MonoBehaviour
 
     private int counter;
     private float holdDist;
+    public float minHoldDist;
     private bool holding;
 
     // Start is called before the first frame update
@@ -82,6 +83,10 @@ public class PickUp : MonoBehaviour
                     oldPosition = pickUp.transform.position;
 
                     holdDist = hit.distance;
+                    if (holdDist < minHoldDist)
+                    {
+                        holdDist = minHoldDist;
+                    }
                 }
                 else
                 {
@@ -96,6 +101,9 @@ public class PickUp : MonoBehaviour
 
                 holding = false;
 
+                // OPTION 2 = NO OBJECT HOLD
+                // pickUp.SetActive(true);
+
                 Debug.Log("Put Down");
             }
             else
@@ -108,8 +116,18 @@ public class PickUp : MonoBehaviour
         {
             position = player.transform.position + (holdDist * forward);
             position.y += holdFactor;
+
+            // OPTION 1 = HOLD OBJECT TO SIDE
+            position += player.transform.right;
             pickUp.GetComponent<Rigidbody>().MovePosition(position);
             pickUp.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
+            // OPTION 2 = NO OBJECT HOLD
+            // pickUp.transform.position = position;
+            // pickUp.SetActive(false);
+
+
+
 
             // OLD TESTS/ OTHER WAYS TO DO MOVEMENT
             //pickUp.transform.position = position;
