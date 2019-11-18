@@ -22,7 +22,10 @@ public class IngredientSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Space))
+        {
+            SpawnLime(new Vector3(0.0f, 0.0f, 0.0f));
+        }
     }
 
     //Method to spawn ingredients at start of level in positions based on ingredients needed in level 
@@ -32,5 +35,10 @@ public class IngredientSpawner : MonoBehaviour
         {
             Instantiate(requiredIngredients[i], positions[i].transform.position, Quaternion.identity);
         }
+    }
+
+    void SpawnLime(Vector3 position)
+    {
+        Instantiate(limePrefab, position, Quaternion.identity);
     }
 }
