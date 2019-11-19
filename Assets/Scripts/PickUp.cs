@@ -45,7 +45,7 @@ public class PickUp : MonoBehaviour
         Debug.DrawLine(player.transform.position, 10 * (player.transform.position + player.transform.forward), _color);
 
         Color _color2 = new Color(1.0f, 0, 0);
-        Debug.DrawLine(playerCamera.transform.position, playerCamera.transform.position + (2 * forward), _color2);
+        Debug.DrawLine(playerCamera.transform.position, playerCamera.transform.position + (grabDist * forward), _color2);
 
         Color _color3 = new Color(0, 1.0f, 0);
         Debug.DrawLine(pickUp.transform.position, playerCamera.transform.position + (2 * forward), _color3);
