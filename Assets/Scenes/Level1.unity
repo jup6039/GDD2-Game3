@@ -518,7 +518,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.15694642, y: 0.04635271, z: 0.090139546}
+  m_Size: {x: 0.2, y: 0.075, z: 0.1}
   m_Center: {x: 0, y: 0.0000000027939682, z: 0}
 --- !u!54 &150850952
 Rigidbody:
@@ -1549,50 +1549,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
---- !u!1 &538065870
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 538065872}
-  - component: {fileID: 538065871}
-  m_Layer: 0
-  m_Name: LimeTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &538065871
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538065870}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &538065872
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538065870}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 52.24, y: 0.365, z: 17.68}
-  m_LocalScale: {x: 2.0725, y: 3.6539, z: 1.5231}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &543415262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4821,8 +4777,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1778713067}
+  - component: {fileID: 1778713069}
+  - component: {fileID: 1778713068}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: LimeShooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4835,13 +4793,41 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778713066}
-  m_LocalRotation: {x: 0.8520921, y: -0.08639379, z: 0.49425897, w: -0.14894095}
-  m_LocalPosition: {x: 51.74, y: 0.69, z: 16.46}
-  m_LocalScale: {x: 0.0050000018, y: 0.005000007, z: 0.0050000045}
+  m_LocalRotation: {x: 0.9838054, y: 0.04485805, z: -0.17278227, w: 0.016156008}
+  m_LocalPosition: {x: 51.95, y: 0.86, z: 16.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -182.711, y: 19.809998, z: -4.747986}
+--- !u!65 &1778713068
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778713066}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9, y: 9, z: 9}
+  m_Center: {x: 1, y: 0, z: 0}
+--- !u!114 &1778713069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778713066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a62c3e6f97eac4439a79d0403477fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lime: {fileID: 1282206873660924140, guid: 6b602906c2ed7d545ae17fd6e5f2c3d0, type: 3}
+  speed: 1000
+  player: {fileID: 1574904583}
 --- !u!1 &1806365882
 GameObject:
   m_ObjectHideFlags: 0
