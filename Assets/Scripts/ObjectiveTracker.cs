@@ -9,8 +9,8 @@ public class ObjectiveTracker : MonoBehaviour
 {
     // Variables
     public Collider areaCollider;
-    public GameObject[] objectArray = new GameObject[5];
-    public GameObject[] incorrectArray = new GameObject[1];
+    public GameObject[] objectArray = new GameObject[8];
+    public GameObject[] incorrectArray = new GameObject[4];
     public Transform gameOverMenu;
     public Transform winScreen;
     public Transform checklist;
@@ -50,7 +50,7 @@ public class ObjectiveTracker : MonoBehaviour
     void Update()
     {
         // constantly go through array of game objects and check to see if any are inside the objective area
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 8; i++)
         {
             if (areaCollider.bounds.Contains(objectArray[i].transform.position))
             {
@@ -59,30 +59,30 @@ public class ObjectiveTracker : MonoBehaviour
                     checklist.gameObject.SetActive(false);
                     gameOverMenu.gameObject.SetActive(true);
                 }
-                else if (objectArray[i].name == "sugar")        // checkmarks are checked when the ingredient is in the area
+                else if (objectArray[i].name == "avocado")        // checkmarks are checked when the ingredient is in the area
                 {
                     sugarToggle.isOn = true;
                 }
-                else if (objectArray[i].name == "flour")
+                else if (objectArray[i].name == "tomato")
                 {
                     flourToggle.isOn = true;
                 }
-                else if (objectArray[i].name == "milk")
+                else if (objectArray[i].name == "onion")
                 {
                     milkToggle.isOn = true;
                 }
-                else if (objectArray[i].name == "eggs")
+                else if (objectArray[i].name == "chip")
                 {
                     eggsToggle.isOn = true;
                 }
             }
-            else
+            /*else
             {
                 sugarToggle.isOn = false;       // checkmarks unchecked if ingredient left the area
                 flourToggle.isOn = false;
                 milkToggle.isOn = false;
                 eggsToggle.isOn = false;
-            }
+            }*/
         }
 
         if (sugarToggle.isOn == true && flourToggle.isOn == true && milkToggle.isOn == true && eggsToggle.isOn == true)
