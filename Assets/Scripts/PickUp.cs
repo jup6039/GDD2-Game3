@@ -27,6 +27,11 @@ public class PickUp : MonoBehaviour
     public float minHoldDist;
     private bool holding;
 
+    // Timer
+    private float timer;
+    private float startTime = 0.0f;
+    private float maxTime = 3.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -117,14 +122,39 @@ public class PickUp : MonoBehaviour
             position = player.transform.position + (holdDist * forward);
             position.y += holdFactor;
 
-            // OPTION 1 = HOLD OBJECT TO SIDE
-            position += player.transform.right;
+            if (Input.GetMouseButton(1))
+            {
+                timer += Time.deltaTime;
+                if (timer >= maxTime)
+                {
+                    timer = maxTime;
+                }
+
+                Debug.Log(timer);
+            }
+            else if (Input.GetMouseButtonUp(1))
+            {
+                holding = false;
+                pickUp.GetComponent<Rigidbody>().isKinematic = false;
+                pickUp.GetComponent<Rigidbody>().velocity = player.transform.forward * timer * 10.0f;
+                timer = startTime;
+
+                Debug.Log("Up");
+            }
+            else
+            {
+                // OPTION 1 = HOLD OBJECT TO SIDE
+                position += player.transform.right;
+                Debug.Log("Whatevs");
+            }
+
             pickUp.GetComponent<Rigidbody>().MovePosition(position);
-            pickUp.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            //pickUp.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
             // OPTION 2 = NO OBJECT HOLD
             // pickUp.transform.position = position;
             // pickUp.SetActive(false);
+
 
 
 

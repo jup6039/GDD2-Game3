@@ -27,7 +27,13 @@ public class PickUpVariant : MonoBehaviour
     public float minHoldDist;
     private bool holding;
 
-    private RaycastHit[] raycastHits; 
+    private RaycastHit[] raycastHits;
+
+    // Timer
+    private float timer;
+    private float startTime = 0.0f;
+    private float maxTime = 2.0f;
+    private float throwMult = 20.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -132,6 +138,26 @@ public class PickUpVariant : MonoBehaviour
             }
 
             raycastHits = null;
+        }
+        if (Input.GetMouseButton(1))
+        {
+            timer += Time.deltaTime;
+            if (timer >= maxTime)
+            {
+                timer = maxTime;
+            }
+
+            Debug.Log(timer);
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            holding = false;
+            pickUp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            pickUp.transform.parent = null;
+            pickUp.GetComponent<Rigidbody>().velocity = player.transform.forward * timer * throwMult;
+            timer = startTime;
+
+            Debug.Log("Up");
         }
 
         //if (holding)
