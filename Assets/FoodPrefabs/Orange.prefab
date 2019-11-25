@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Orange
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 16ec6efed8df064478f604f26c5c0142, type: 3}
+      propertyPath: m_TagString
+      value: Pickup
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 16ec6efed8df064478f604f26c5c0142, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

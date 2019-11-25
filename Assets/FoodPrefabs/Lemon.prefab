@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lemon
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ee6a0f4f3c9c1e245ba88d5f363c7424, type: 3}
+      propertyPath: m_TagString
+      value: Pickup
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ee6a0f4f3c9c1e245ba88d5f363c7424, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

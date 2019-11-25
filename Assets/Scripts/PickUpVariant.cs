@@ -50,6 +50,7 @@ public class PickUpVariant : MonoBehaviour
 
         forward = playerCamera.transform.forward;
 
+        /*
         Color _color = new Color(0, 0, 20.0f);
         Debug.DrawLine(player.transform.position, 10 * (player.transform.position + player.transform.forward), _color);
 
@@ -58,6 +59,7 @@ public class PickUpVariant : MonoBehaviour
 
         Color _color3 = new Color(0, 1.0f, 0);
         Debug.DrawLine(pickUp.transform.position, playerCamera.transform.position + (2 * forward), _color3);
+        */
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -141,15 +143,17 @@ public class PickUpVariant : MonoBehaviour
         }
         if (Input.GetMouseButton(1))
         {
-            timer += Time.deltaTime;
-            if (timer >= maxTime)
-            {
-                timer = maxTime;
+            if(holding){
+                timer += Time.deltaTime;
+                if (timer >= maxTime)
+                {
+                    timer = maxTime;
+                }
             }
 
             Debug.Log(timer);
         }
-        else if (Input.GetMouseButtonUp(1))
+        else if (Input.GetMouseButtonUp(1) && pickUp != null)
         {
             holding = false;
             pickUp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
@@ -158,6 +162,16 @@ public class PickUpVariant : MonoBehaviour
             timer = startTime;
 
             Debug.Log("Up");
+        }
+
+        if(pickUp != null)
+        {
+            if(!pickUp.active)
+            {
+                holding = false;
+                pickUp.transform.parent = null;
+                pickUp = null;
+            }
         }
 
         //if (holding)

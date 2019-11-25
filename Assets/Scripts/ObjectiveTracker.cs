@@ -10,7 +10,8 @@ public class ObjectiveTracker : MonoBehaviour
     // Variables
     public Collider areaCollider;
     public GameObject[] objectArray = new GameObject[8];
-    public GameObject[] incorrectArray = new GameObject[4];
+    public List<GameObject> ingredients;
+    //public GameObject[] incorrectArray = new GameObject[4];
     public Transform gameOverMenu;
     public Transform winScreen;
     public Transform checklist;
@@ -50,16 +51,18 @@ public class ObjectiveTracker : MonoBehaviour
     void Update()
     {
         // constantly go through array of game objects and check to see if any are inside the objective area
+        /*
         for (int i = 0; i < 8; i++)
         {
             if (areaCollider.bounds.Contains(objectArray[i].transform.position))
             {
-                if (incorrectArray.Contains(objectArray[i]))    // game over if object in array is one of objects in incorrect array
-                {
-                    checklist.gameObject.SetActive(false);
-                    gameOverMenu.gameObject.SetActive(true);
-                }
-                else if (objectArray[i].name == "Avocado")        // checkmarks are checked when the ingredient is in the area
+                //if (incorrectArray.Contains(objectArray[i]))    // game over if object in array is one of objects in incorrect array
+                //{
+                //    checklist.gameObject.SetActive(false);
+                //    gameOverMenu.gameObject.SetActive(true);
+                //}
+                //else 
+                if (objectArray[i].name == "Avocado")        // checkmarks are checked when the ingredient is in the area
                 {
                     sugarToggle.isOn = true;
                     objectArray[i].SetActive(false);
@@ -80,13 +83,40 @@ public class ObjectiveTracker : MonoBehaviour
                     objectArray[i].SetActive(false);
                 }
             }
-            /*else
+            else
             {
                 sugarToggle.isOn = false;       // checkmarks unchecked if ingredient left the area
                 flourToggle.isOn = false;
                 milkToggle.isOn = false;
                 eggsToggle.isOn = false;
-            }*/
+            }
+        }
+        */
+        foreach(GameObject food in ingredients)
+        {
+            if(areaCollider.bounds.Contains(food.transform.position))
+            {
+                if (food.name == "Avocado")
+                {
+                    sugarToggle.isOn = true;
+                }
+                else if (food.name == "Tomato")
+                {
+                    flourToggle.isOn = true;
+                }
+                else if (food.name == "Onion")
+                {
+                    milkToggle.isOn = true;
+                }
+                else if (food.name == "Chip")
+                {
+                    eggsToggle.isOn = true;
+                }
+
+                food.SetActive(false);
+                ingredients.Remove(food);
+                Destroy(food);
+            }
         }
 
         if (sugarToggle.isOn == true && flourToggle.isOn == true && milkToggle.isOn == true && eggsToggle.isOn == true)
@@ -112,5 +142,14 @@ public class ObjectiveTracker : MonoBehaviour
         SceneManager.LoadScene(currentScene.buildIndex);
         gameOverMenu.gameObject.SetActive(false);
         Debug.Log("scene restarted");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.name.Contains("Lime") || other.name.Contains("lime"))
+        {
+            checklist.gameObject.SetActive(false);
+            gameOverMenu.gameObject.SetActive(true);
+        }
     }
 }
