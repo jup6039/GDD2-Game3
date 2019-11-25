@@ -4828,6 +4828,10 @@ MonoBehaviour:
   lime: {fileID: 1282206873660924140, guid: 6b602906c2ed7d545ae17fd6e5f2c3d0, type: 3}
   speed: 1000
   player: {fileID: 1574904583}
+  timerCheck: 0.001
+  useTriggerBox: 1
+  areaWidth: 0
+  areaHeight: 0
 --- !u!1 &1806365882
 GameObject:
   m_ObjectHideFlags: 0
