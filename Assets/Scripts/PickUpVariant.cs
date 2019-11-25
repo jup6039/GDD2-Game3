@@ -107,7 +107,7 @@ public class PickUpVariant : MonoBehaviour
                         //{
                         //    holdDist = minHoldDist;
                         //}
-                        continue;
+                        break;
                     }
                     else
                     {
