@@ -59,21 +59,25 @@ public class ObjectiveTracker : MonoBehaviour
                     checklist.gameObject.SetActive(false);
                     gameOverMenu.gameObject.SetActive(true);
                 }
-                else if (objectArray[i].name == "avocado")        // checkmarks are checked when the ingredient is in the area
+                else if (objectArray[i].name == "Avocado")        // checkmarks are checked when the ingredient is in the area
                 {
                     sugarToggle.isOn = true;
+                    objectArray[i].SetActive(false);
                 }
-                else if (objectArray[i].name == "tomato")
+                else if (objectArray[i].name == "Tomato")
                 {
                     flourToggle.isOn = true;
+                    objectArray[i].SetActive(false);
                 }
-                else if (objectArray[i].name == "onion")
+                else if (objectArray[i].name == "Onion")
                 {
                     milkToggle.isOn = true;
+                    objectArray[i].SetActive(false);
                 }
-                else if (objectArray[i].name == "chip")
+                else if (objectArray[i].name == "Chip")
                 {
                     eggsToggle.isOn = true;
+                    objectArray[i].SetActive(false);
                 }
             }
             /*else

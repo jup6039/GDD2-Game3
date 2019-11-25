@@ -349,7 +349,7 @@ PrefabInstance:
     - target: {fileID: 1145385245541425189, guid: 96c855f1e1ddd8543be76a499cc27ec9,
         type: 3}
       propertyPath: m_Name
-      value: milk
+      value: Milk
       objectReference: {fileID: 0}
     - target: {fileID: 1145385245541425189, guid: 96c855f1e1ddd8543be76a499cc27ec9,
         type: 3}
@@ -437,7 +437,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000010759889362, guid: 3245fc5926a7535429f2989cab01a844, type: 3}
       propertyPath: m_Name
-      value: avocado
+      value: Avocado
       objectReference: {fileID: 0}
     - target: {fileID: 1000010759889362, guid: 3245fc5926a7535429f2989cab01a844, type: 3}
       propertyPath: m_TagString
@@ -2066,7 +2066,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 7654cc9cfdc93c94597684897a8cc77b, type: 3}
       propertyPath: m_Name
-      value: lime
+      value: Lime
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7654cc9cfdc93c94597684897a8cc77b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3323,7 +3323,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1067201021930494, guid: 097013ceeb8052648be3891c0984df9a, type: 3}
       propertyPath: m_Name
-      value: onion
+      value: Onion
       objectReference: {fileID: 0}
     - target: {fileID: 1067201021930494, guid: 097013ceeb8052648be3891c0984df9a, type: 3}
       propertyPath: m_TagString
@@ -4391,7 +4391,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000013284424148, guid: b29c3addc4240254785fef8671d1291b, type: 3}
       propertyPath: m_Name
-      value: tomato
+      value: Tomato
       objectReference: {fileID: 0}
     - target: {fileID: 1000013284424148, guid: b29c3addc4240254785fef8671d1291b, type: 3}
       propertyPath: m_TagString
@@ -4828,6 +4828,10 @@ MonoBehaviour:
   lime: {fileID: 1282206873660924140, guid: 6b602906c2ed7d545ae17fd6e5f2c3d0, type: 3}
   speed: 1000
   player: {fileID: 1574904583}
+  timerCheck: 0.001
+  useTriggerBox: 1
+  areaWidth: 0
+  areaHeight: 0
 --- !u!1 &1806365882
 GameObject:
   m_ObjectHideFlags: 0
@@ -5228,7 +5232,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000014176262252, guid: d86ca81cf8e2b784c8d58502235ee8b3, type: 3}
       propertyPath: m_Name
-      value: chip
+      value: Chip
       objectReference: {fileID: 0}
     - target: {fileID: 1000014176262252, guid: d86ca81cf8e2b784c8d58502235ee8b3, type: 3}
       propertyPath: m_TagString
@@ -8708,6 +8712,8 @@ GameObject:
   - component: {fileID: 311530874026791436}
   - component: {fileID: 4882951320381749723}
   - component: {fileID: 2879320384242263008}
+  - component: {fileID: 8548520832036249308}
+  - component: {fileID: 8548520832036249307}
   m_Layer: 0
   m_Name: kitchen_02
   m_TagString: Untagged
@@ -8715,6 +8721,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &8548520832036249307
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8548520832036249306}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08962286, y: 0.017316416, z: 0.025222285}
+  m_Center: {x: 0.00000001720363, y: 0.038723703, z: -0.0000000021504538}
+--- !u!65 &8548520832036249308
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8548520832036249306}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021504082, y: 0.09476377, z: 0.025222285}
+  m_Center: {x: -0.034059312, y: 0.000000030106353, z: -0.0000000021504538}
 --- !u!23 &8550972259522791251
 MeshRenderer:
   m_ObjectHideFlags: 0
