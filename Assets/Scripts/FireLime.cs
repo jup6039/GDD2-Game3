@@ -5,37 +5,56 @@ using UnityEngine;
 public class FireLime : MonoBehaviour
 {
     // Variables
-    public GameObject lime;
-    public float speed = 200f;
-    public GameObject player;
+    public GameObject lime; // Passed in prefab
+    public float speed = 1000f; // Speed of the limes. With a mass of 1, going over 1000 yields strange results. Not recommended
+    public GameObject player; // Player to check with for trigger box
+    public float timerCheck = .001f; // The lower this is, the more frequently limes fire
+    public bool useTriggerBox = true; // If true, will check for a collision box before firing. Otherwise, continuously fires limes endlessly
+    public float areaWidth = 0;
+    public float areaHeight = 0; // Height and width for where the limes will spawn
 
     private float timer = 0;
     private bool toFire = false;
     private bool timerActive = false;
+    private Vector3 spawnPos;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnPos = new Vector3();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if(gameObject.GetComponent<BoxCollider>().)
-
-        if (!timerActive && toFire)
+        if(useTriggerBox)
         {
-            GameObject limeProjectile = Instantiate(lime, transform.position, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0))) as GameObject;
-            //limeProjectile.transform.rotation = Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0));
-            limeProjectile.GetComponent<Rigidbody>().AddForce(Vector3.forward * speed);
-            timerActive = true;
+            if (!timerActive && toFire)
+            {
+                spawnPos = new Vector3(Random.Range(transform.position.x, transform.position.x + areaWidth),
+                    Random.Range(transform.position.y, transform.position.y + areaHeight), transform.position.z);
+                GameObject limeProjectile = Instantiate(lime, spawnPos, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0))) as GameObject;
+                //limeProjectile.transform.rotation = Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0));
+                limeProjectile.GetComponent<Rigidbody>().AddForce(Vector3.forward * speed);
+                timerActive = true;
+            }
+        }
+        else
+        {
+            if (!timerActive)
+            {
+                spawnPos = new Vector3(Random.Range(transform.position.x, transform.position.x + areaWidth),
+                    Random.Range(transform.position.y, transform.position.y + areaHeight), transform.position.z); GameObject limeProjectile = Instantiate(lime, spawnPos, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0))) as GameObject;
+                //limeProjectile.transform.rotation = Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0));
+                limeProjectile.GetComponent<Rigidbody>().AddForce(Vector3.forward * speed);
+                timerActive = true;
+            }
         }
 
         if(timerActive)
         {
             timer += Time.deltaTime;
-            if(timer >= 1.5f)
+            if(timer >= timerCheck)
             {
                 timer = 0;
                 timerActive = false;
