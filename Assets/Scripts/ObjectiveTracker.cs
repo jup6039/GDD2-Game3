@@ -9,13 +9,14 @@ public class ObjectiveTracker : MonoBehaviour
 {
     // Variables
     public Collider areaCollider;
-    public GameObject[] objectArray = new GameObject[8];
+    //public GameObject[] objectArray = new GameObject[8];
     public List<GameObject> ingredients;
+    private List<GameObject> toggles;
     //public GameObject[] incorrectArray = new GameObject[4];
     public Transform gameOverMenu;
     public Transform winScreen;
     public Transform checklist;
-    //public Button restartButton;
+    public GameObject toggleDefault;
 
     // private stuff
     private Scene currentScene;
@@ -23,28 +24,58 @@ public class ObjectiveTracker : MonoBehaviour
     private bool didWin;
 
     // Toggles
-    public Toggle sugarToggle;
+    /*public Toggle sugarToggle;
     public Toggle flourToggle;
     public Toggle milkToggle;
-    public Toggle eggsToggle;
+    public Toggle eggsToggle;*/
 
     // Start is called before the first frame update
     void Start()
     {
-        // Set toggles
-        sugarToggle.isOn = false;
-        flourToggle.isOn = false;
-        milkToggle.isOn = false;
-        eggsToggle.isOn = false;
-
         didWin = false;
         areaCollider = this.GetComponent<Collider>();
-        //restartButton.onClick.AddListener(RestartScene);
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         gameOverMenu.gameObject.SetActive(false);
         checklist.gameObject.SetActive(true);
         winScreen.gameObject.SetActive(false);
+        Font ArialFont = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
+        toggles = new List<GameObject>();
+
+        for (int i = 0; i < ingredients.Count; i++)
+        {
+            // Create ingredient name texts
+            GameObject ingredientName = new GameObject(ingredients[i].name);
+            ingredientName.transform.SetParent(checklist);
+
+            RectTransform ingredientTransform = ingredientName.AddComponent<RectTransform>();
+            ingredientTransform.anchoredPosition = new Vector2(0, 20 * -i);
+
+            Text ingredientText = ingredientName.AddComponent<Text>();
+            ingredientText.text = ingredients[i].name;
+            ingredientText.font = ArialFont;
+            ingredientText.color = Color.black;
+
+            // Create toggles
+            GameObject ingredientToggle = Instantiate(toggleDefault);
+            ingredientToggle.name = ingredients[i].name;
+            ingredientToggle.transform.SetParent(checklist);
+            ingredientToggle.GetComponent<RectTransform>().anchoredPosition = new Vector2(120, (20 * -i) - 50);
+            ingredientToggle.GetComponent<Toggle>().isOn = false;
+            ingredientToggle.GetComponent<Toggle>().interactable = false;
+
+            // Add toggles to list
+            toggles.Add(ingredientToggle);
+
+            //RectTransform toggleTransform = ingredientToggle.AddComponent<RectTransform>();
+            //ingredientName.anchoredPosition = new Vector2(0, 20 * -i);
+
+            /*Toggle actualToggle = ingredientToggle.AddComponent<Toggle>();
+            actualToggle.isOn = false;
+            actualToggle.interactable = false;
+            actualToggle.graphic = toggleGraphic;
+            actualToggle.targetGraphic = toggleBackGraphic;*/
+        }
     }
 
     // Update is called once per frame
@@ -92,34 +123,25 @@ public class ObjectiveTracker : MonoBehaviour
             }
         }
         */
-        foreach(GameObject food in ingredients)
+        foreach (GameObject food in ingredients)
         {
             if(areaCollider.bounds.Contains(food.transform.position))
             {
-                if (food.name == "Avocado")
+                foreach(GameObject toggle in toggles)
                 {
-                    sugarToggle.isOn = true;
-                }
-                else if (food.name == "Tomato")
-                {
-                    flourToggle.isOn = true;
-                }
-                else if (food.name == "Onion")
-                {
-                    milkToggle.isOn = true;
-                }
-                else if (food.name == "Chip")
-                {
-                    eggsToggle.isOn = true;
-                }
+                    if (food.name == toggle.name)
+                    {
+                        toggle.GetComponent<Toggle>().isOn = true;
+                    }
 
-                food.SetActive(false);
-                ingredients.Remove(food);
-                Destroy(food);
+                    food.SetActive(false);
+                    ingredients.Remove(food);
+                    Destroy(food);
+                }
             }
         }
 
-        if (sugarToggle.isOn == true && flourToggle.isOn == true && milkToggle.isOn == true && eggsToggle.isOn == true)
+        if (ingredients.Count == 0)
         {
             didWin = true;      // win if all checkmarks are checked (all ingredients are within the objective area)
             winScreen.gameObject.SetActive(true);
