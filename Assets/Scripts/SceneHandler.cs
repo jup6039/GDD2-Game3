@@ -7,13 +7,13 @@ public class SceneHandler : MonoBehaviour
 {
     // Fields
     public GameObject objectiveHandler;
-    private int currentIndex;
+    public int currentIndex;
 
     // Start is called before the first frame update
     void Start()
     {
-        // This is currently the first level. Intended to be the Start Screen by the end of next sprint
-        //LoadFirstLevel();
+        Scene scene = SceneManager.GetActiveScene();
+        currentIndex = scene.buildIndex;
     }
 
     // Update is called once per frame

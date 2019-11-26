@@ -147,8 +147,10 @@ public class ObjectiveTracker : MonoBehaviour
         if (ingredients.Count == 0)
         {
             didWin = true;      // win if all checkmarks are checked (all ingredients are within the objective area)
-            sceneHandler.GetComponent<SceneHandler>().LoadNextLevel();
-            levelCompleteMenu.gameObject.SetActive(true);
+            if(sceneHandler.GetComponent<SceneHandler>().currentIndex < 1)
+                sceneHandler.GetComponent<SceneHandler>().LoadNextLevel();
+            else
+                winScreen.gameObject.SetActive(true);
         }
 
         if (Input.GetKeyDown("r"))      // restart game
