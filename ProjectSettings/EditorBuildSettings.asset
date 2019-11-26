@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RamanLevel1.unity
     guid: 951f7ac37bc98ee43830ac3a89495f70
+  - enabled: 1
+    path: Assets/Scenes/RamanLevel2.unity
+    guid: 9032e18d64a6b8645bfd628c360c1ad0
   m_configObjects: {}

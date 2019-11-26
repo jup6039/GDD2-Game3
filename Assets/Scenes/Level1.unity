@@ -310,6 +310,7 @@ MonoBehaviour:
   winScreen: {fileID: 2126611284}
   checklist: {fileID: 1845261887}
   toggleDefault: {fileID: 1248580169}
+  sceneCount: 1
 --- !u!65 &77627820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3016,6 +3017,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveHandler: {fileID: 77627818}
+  currentIndex: 0
+  sceneCount: 1
 --- !u!1 &1061878270
 GameObject:
   m_ObjectHideFlags: 0

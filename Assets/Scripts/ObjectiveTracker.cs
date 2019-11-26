@@ -55,11 +55,14 @@ public class ObjectiveTracker : MonoBehaviour
             ingredientName.transform.SetParent(checklist);
 
             RectTransform ingredientTransform = ingredientName.AddComponent<RectTransform>();
-            ingredientTransform.anchoredPosition = new Vector2(0, 20 * -i);
+            ingredientTransform.anchorMin = new Vector2(0, 1);
+            ingredientTransform.anchorMax = new Vector2(0, 1);
+            ingredientTransform.anchoredPosition = new Vector2(35, 20 * -i - 75);
 
             Text ingredientText = ingredientName.AddComponent<Text>();
             ingredientText.text = ingredients[i].name;
             ingredientText.font = ArialFont;
+            ingredientText.fontSize = 22;
             ingredientText.color = Color.black;
 
             // Create toggles
