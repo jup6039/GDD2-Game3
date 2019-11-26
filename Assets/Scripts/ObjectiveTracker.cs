@@ -14,6 +14,7 @@ public class ObjectiveTracker : MonoBehaviour
     private List<GameObject> toggles;
     //public GameObject[] incorrectArray = new GameObject[4];
     public Transform gameOverMenu;
+    public Transform levelCompleteMenu;
     public Transform winScreen;
     public Transform checklist;
     public GameObject toggleDefault;
