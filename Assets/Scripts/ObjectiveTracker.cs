@@ -19,11 +19,13 @@ public class ObjectiveTracker : MonoBehaviour
     public Transform winScreen;
     public Transform checklist;
     public GameObject toggleDefault;
+    public int sceneCount; //Set this in the inspector based on how many levels there are
 
     // private stuff
     private Scene currentScene;
     private string sceneName;
     private bool didWin;
+    private bool nextLevelScreen;
 
     // Toggles
     /*public Toggle sugarToggle;
@@ -35,6 +37,7 @@ public class ObjectiveTracker : MonoBehaviour
     void Start()
     {
         didWin = false;
+        nextLevelScreen = false;
         areaCollider = this.GetComponent<Collider>();
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
@@ -135,25 +138,34 @@ public class ObjectiveTracker : MonoBehaviour
                     if (food.name == toggle.name)
                     {
                         toggle.GetComponent<Toggle>().isOn = true;
+                        food.SetActive(false);
+                        ingredients.Remove(food);
+                        Destroy(food);
+                        break;
                     }
-
-                    food.SetActive(false);
-                    ingredients.Remove(food);
-                    Destroy(food);
                 }
+                break;
             }
         }
 
         if (ingredients.Count == 0)
         {
             didWin = true;      // win if all checkmarks are checked (all ingredients are within the objective area)
-            if(sceneHandler.GetComponent<SceneHandler>().currentIndex < 1)
-                sceneHandler.GetComponent<SceneHandler>().LoadNextLevel();
+            if(sceneHandler.GetComponent<SceneHandler>().currentIndex < sceneCount)
+            {
+                nextLevelScreen = true;
+                levelCompleteMenu.gameObject.SetActive(true);
+            }
             else
                 winScreen.gameObject.SetActive(true);
         }
 
-        if (Input.GetKeyDown("r"))      // restart game
+        if (Input.GetKeyDown("c") && nextLevelScreen)
+        {
+            sceneHandler.GetComponent<SceneHandler>().LoadNextLevel();
+        }
+
+        if (Input.GetKeyDown("r") && (winScreen.gameObject.active || gameOverMenu.gameObject.active))      // restart game
         {
             gameOverMenu.gameObject.SetActive(false);
             winScreen.gameObject.SetActive(false);
