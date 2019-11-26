@@ -8,6 +8,7 @@ using System.Linq;
 public class ObjectiveTracker : MonoBehaviour
 {
     // Variables
+    public GameObject sceneHandler;
     public Collider areaCollider;
     //public GameObject[] objectArray = new GameObject[8];
     public List<GameObject> ingredients;
@@ -40,6 +41,7 @@ public class ObjectiveTracker : MonoBehaviour
         gameOverMenu.gameObject.SetActive(false);
         checklist.gameObject.SetActive(true);
         winScreen.gameObject.SetActive(false);
+        levelCompleteMenu.gameObject.SetActive(false);
         Font ArialFont = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
         toggles = new List<GameObject>();
 
@@ -145,12 +147,16 @@ public class ObjectiveTracker : MonoBehaviour
         if (ingredients.Count == 0)
         {
             didWin = true;      // win if all checkmarks are checked (all ingredients are within the objective area)
-            winScreen.gameObject.SetActive(true);
+            sceneHandler.GetComponent<SceneHandler>().LoadNextLevel();
+            levelCompleteMenu.gameObject.SetActive(true);
         }
 
         if (Input.GetKeyDown("r"))      // restart game
         {
-            RestartScene();
+            gameOverMenu.gameObject.SetActive(false);
+            winScreen.gameObject.SetActive(false);
+            levelCompleteMenu.gameObject.SetActive(false);
+            sceneHandler.GetComponent<SceneHandler>().LoadFirstLevel();
         }
 
         if (didWin == true && Input.GetKeyDown("escape"))       // exit the game upon winning
