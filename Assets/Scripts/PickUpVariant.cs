@@ -122,12 +122,19 @@ public class PickUpVariant : MonoBehaviour
                 Vector3 moveVec = -oldPosition + position;
                 //pickUp.GetComponent<Rigidbody>().isKinematic = false;
                 //pickUp.GetComponent<Rigidbody>().useGravity = true;
-                pickUp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                pickUp.GetComponent<Rigidbody>().velocity = moveVec;
+                if (pickUp != null)
+                {
+                    pickUp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                    pickUp.GetComponent<Rigidbody>().velocity = moveVec;
 
-                holding = false;
+                    holding = false;
 
-                pickUp.transform.parent = null;
+                    pickUp.transform.parent = null;
+                }
+                else
+                {
+                    holding = false;
+                }
 
                 // OPTION 2 = NO OBJECT HOLD
                 // pickUp.SetActive(true);
