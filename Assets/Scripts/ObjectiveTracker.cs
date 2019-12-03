@@ -173,7 +173,8 @@ public class ObjectiveTracker : MonoBehaviour
             gameOverMenu.gameObject.SetActive(false);
             winScreen.gameObject.SetActive(false);
             levelCompleteMenu.gameObject.SetActive(false);
-            sceneHandler.GetComponent<SceneHandler>().LoadFirstLevel();
+            //sceneHandler.GetComponent<SceneHandler>().LoadFirstLevel();
+            RestartScene();
         }
 
         if (didWin == true && Input.GetKeyDown("escape"))       // exit the game upon winning
