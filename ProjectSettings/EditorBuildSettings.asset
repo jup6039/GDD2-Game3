@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TestUI.unity
     guid: cc24a4b2914092f45b015698c510ee21
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 31b9028bf0f83ec43a345a773bcf9659
+  - enabled: 1
     path: Assets/Scenes/LimeFlood.unity
     guid: 4ff2770e8fb405e4fa51806ea5a61fd2
   - enabled: 1

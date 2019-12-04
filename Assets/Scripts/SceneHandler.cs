@@ -40,7 +40,7 @@ public class SceneHandler : MonoBehaviour
     // Loads the first scene. Meant to replace RestartScene in the ObjectiveTracker
     public void LoadFirstLevel()
     {
-        currentIndex = 0;
+        currentIndex = 1;
         SceneManager.LoadScene(currentIndex);
     }
 }
