@@ -310,7 +310,7 @@ MonoBehaviour:
   winScreen: {fileID: 2126611284}
   checklist: {fileID: 1845261887}
   toggleDefault: {fileID: 1248580169}
-  sceneCount: 1
+  sceneCount: 3
 --- !u!65 &77627820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -683,6 +683,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8856dbe0a9879694f8c375c54b52101d, type: 3}
+--- !u!1 &164323691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 164323694}
+  - component: {fileID: 164323693}
+  - component: {fileID: 164323692}
+  m_Layer: 0
+  m_Name: LimeShooter2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &164323692
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164323691}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9, y: 9, z: 9}
+  m_Center: {x: 1, y: 0, z: 0}
+--- !u!114 &164323693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164323691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a62c3e6f97eac4439a79d0403477fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lime: {fileID: 1282206873660924140, guid: 6b602906c2ed7d545ae17fd6e5f2c3d0, type: 3}
+  speed: 1000
+  player: {fileID: 1574904583}
+  timerCheck: 0.001
+  useTriggerBox: 0
+  areaWidth: 5
+  areaHeight: 5
+--- !u!4 &164323694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164323691}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1019190254}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &190259402
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,6 +3067,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1019190253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1019190254}
+  m_Layer: 0
+  m_Name: LimeShooter2Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1019190254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019190253}
+  m_LocalRotation: {x: -0, y: -0.71928394, z: -0, w: 0.6947162}
+  m_LocalPosition: {x: 58.001648, y: 1.64, z: 28.974651}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 164323694}
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: -91.991005, z: 0}
 --- !u!1 &1042151691
 GameObject:
   m_ObjectHideFlags: 0
@@ -3102,9 +3197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b799c80c335734cbbec53d7171babf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveHandler: {fileID: 77627818}
   currentIndex: 0
-  sceneCount: 1
+  sceneCount: 3
 --- !u!1 &1061878270
 GameObject:
   m_ObjectHideFlags: 0
@@ -3236,7 +3330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -553.2215, y: -203.61687}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1088997600
@@ -6350,13 +6444,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778713066}
-  m_LocalRotation: {x: 0.9838054, y: 0.04485805, z: -0.17278227, w: 0.016156008}
-  m_LocalPosition: {x: 51.95, y: 0.86, z: 16.64}
+  m_LocalRotation: {x: -0.05609006, y: -0.007279358, z: -0.00040895466, w: 0.9983991}
+  m_LocalPosition: {x: 52.364147, y: 0.9621037, z: 17.136599}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -182.711, y: 19.809998, z: -4.747986}
+  m_LocalEulerAnglesHint: {x: -6.431, y: -0.83500004, z: 0}
 --- !u!65 &1778713068
 BoxCollider:
   m_ObjectHideFlags: 0

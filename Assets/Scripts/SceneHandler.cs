@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneHandler : MonoBehaviour
 {
     // Fields
-    public GameObject objectiveHandler;
+    //public GameObject objectiveHandler;
     public int currentIndex;
     public int sceneCount; //Set this in the inspector based on how many levels there are
 
@@ -30,10 +30,6 @@ public class SceneHandler : MonoBehaviour
         if(currentIndex <= sceneCount)
         {
             SceneManager.LoadScene(currentIndex);
-        }
-        else
-        {
-            LoadFirstLevel();
         }
     }
 

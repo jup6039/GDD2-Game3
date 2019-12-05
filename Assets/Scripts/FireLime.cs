@@ -33,9 +33,9 @@ public class FireLime : MonoBehaviour
             {
                 spawnPos = new Vector3(Random.Range(transform.position.x, transform.position.x + areaWidth),
                     Random.Range(transform.position.y, transform.position.y + areaHeight), transform.position.z);
-                GameObject limeProjectile = Instantiate(lime, spawnPos, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0))) as GameObject;
+                GameObject limeProjectile = Instantiate(lime, spawnPos, Quaternion.identity) as GameObject;
                 //limeProjectile.transform.rotation = Random.rotation;
-                limeProjectile.GetComponent<Rigidbody>().AddForce(Vector3.forward * speed);
+                limeProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
                 timerActive = true;
             }
         }
@@ -46,9 +46,9 @@ public class FireLime : MonoBehaviour
                 spawnPos = new Vector3(Random.Range(transform.position.x, transform.position.x + areaWidth),
                     Random.Range(transform.position.y, transform.position.y + areaHeight), transform.position.z);
 
-                GameObject limeProjectile = Instantiate(lime, spawnPos, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0))) as GameObject;
+                GameObject limeProjectile = Instantiate(lime, spawnPos, Quaternion.identity) as GameObject;
                 //limeProjectile.transform.rotation = Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0));
-                limeProjectile.GetComponent<Rigidbody>().AddForce(Vector3.forward * speed);
+                limeProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
                 timerActive = true;
             }
         }

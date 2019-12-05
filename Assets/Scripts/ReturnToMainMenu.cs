@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class StartGameScript : MonoBehaviour
+public class ReturnToMainMenu : MonoBehaviour
 {
-    public Button startGame;
+    public Button returnToMenu;
 
     // Start is called before the first frame update
     void Start()
     {
-        startGame.onClick.AddListener(TaskOnClick);
+        returnToMenu.onClick.AddListener(TaskOnClick);
     }
 
     // Update is called once per frame
@@ -22,7 +22,6 @@ public class StartGameScript : MonoBehaviour
 
     void TaskOnClick()
     {
-        SceneManager.LoadScene(1);
-        Cursor.visible = false;
+        SceneManager.LoadScene(0);
     }
 }

@@ -160,7 +160,11 @@ public class ObjectiveTracker : MonoBehaviour
                 levelCompleteMenu.gameObject.SetActive(true);
             }
             else
-                winScreen.gameObject.SetActive(true);
+            {
+                SceneManager.LoadScene("WinMenu");
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
 
         if (Input.GetKeyDown("c") && nextLevelScreen)
