@@ -134,7 +134,7 @@ public class ObjectiveTracker : MonoBehaviour
         */
         foreach (GameObject food in ingredients)
         {
-            if(areaCollider.bounds.Contains(food.transform.position))
+            if(areaCollider.GetComponent<MeshRenderer>().bounds.Contains(food.transform.position))
             {
                 foreach(GameObject toggle in toggles)
                 {

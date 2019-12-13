@@ -1712,11 +1712,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Controls:\n- W, A, S, and D to move\n- Spacebar to jump\n- Left Click to
-    pick up object. You do not need to hold the button down.\n- Left Click while holding
-    an object to drop it.\n- Hold Right Click while holding an object to charge up
-    force for a throw.\n  - Release Right Click to throw the held object. There is
-    a limit on force.\n- Press R at any time to Reset the current level."
+  m_Text: "Controls:\n- W, A, S, and D to move, and hold Shift to Sprint\n- Spacebar
+    to jump. Sprint-Jumping travels farther\n- Left Click to pick up object. You do
+    not need to hold the button down.\n- Left Click while holding an object to drop
+    it.\n- Hold Right Click while holding an object to charge up force for a throw.\n
+    \ - Release Right Click to throw the held object. There is a limit on force.\n-
+    Press R at any time to Reset the current level."
 --- !u!222 &1658189183
 CanvasRenderer:
   m_ObjectHideFlags: 0
