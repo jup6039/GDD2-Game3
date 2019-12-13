@@ -7658,7 +7658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentIndex: 0
-  sceneCount: 3
+  levelAmount: 8
 --- !u!114 &1215478572
 MonoBehaviour:
   m_ObjectHideFlags: 0

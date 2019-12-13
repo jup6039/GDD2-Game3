@@ -1534,7 +1534,7 @@ PrefabInstance:
     - target: {fileID: 1593236062096205169, guid: 6eb830e8a07049145aff93d9964940ca,
         type: 3}
       propertyPath: m_Name
-      value: Rice_Bowl
+      value: Rice
       objectReference: {fileID: 0}
     - target: {fileID: 1590324537170338353, guid: 6eb830e8a07049145aff93d9964940ca,
         type: 3}
@@ -3264,7 +3264,6 @@ MonoBehaviour:
   winScreen: {fileID: 1938201789}
   checklist: {fileID: 2007052269}
   toggleDefault: {fileID: 1012718787}
-  sceneCount: 3
 --- !u!65 &863721153
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4120,7 +4119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentIndex: 0
-  sceneCount: 3
+  levelAmount: 8
 --- !u!1 &1061878270
 GameObject:
   m_ObjectHideFlags: 0

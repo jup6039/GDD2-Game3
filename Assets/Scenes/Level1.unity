@@ -827,9 +827,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b799c80c335734cbbec53d7171babf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveHandler: {fileID: 0}
   currentIndex: 0
-  sceneCount: 1
+  levelAmount: 8
 --- !u!114 &97254995
 MonoBehaviour:
   m_ObjectHideFlags: 0

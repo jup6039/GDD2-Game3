@@ -8,7 +8,8 @@ public class SceneHandler : MonoBehaviour
     // Fields
     //public GameObject objectiveHandler;
     public int currentIndex;
-    public int sceneCount; //Set this in the inspector based on how many levels there are
+    public int levelAmount; //Set this in the inspector based on how many levels there are. Do not include the start and end menus.
+                         // So if there are 8 levels, this should be set to 8 for every scene
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class SceneHandler : MonoBehaviour
     public void LoadNextLevel()
     {
         currentIndex++;
-        if(currentIndex <= sceneCount)
+        if(currentIndex <= levelAmount)
         {
             SceneManager.LoadScene(currentIndex);
         }

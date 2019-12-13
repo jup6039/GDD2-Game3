@@ -19,7 +19,7 @@ public class ObjectiveTracker : MonoBehaviour
     public Transform winScreen;
     public Transform checklist;
     public GameObject toggleDefault;
-    public int sceneCount; //Set this in the inspector based on how many levels there are
+    //public int sceneCount; // No longer needed, this script accesses the SceneHandler levelAmount variable now
 
     // private stuff
     private Scene currentScene;
@@ -154,7 +154,7 @@ public class ObjectiveTracker : MonoBehaviour
         if (ingredients.Count == 0)
         {
             didWin = true;      // win if all checkmarks are checked (all ingredients are within the objective area)
-            if(sceneHandler.GetComponent<SceneHandler>().currentIndex < sceneCount)
+            if(sceneHandler.GetComponent<SceneHandler>().currentIndex < sceneHandler.GetComponent<SceneHandler>().levelAmount)
             {
                 nextLevelScreen = true;
                 levelCompleteMenu.gameObject.SetActive(true);
