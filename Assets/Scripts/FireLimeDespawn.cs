@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireLime : MonoBehaviour
+public class FireLimeDespawn : MonoBehaviour
 {
     // Variables
     public GameObject lime; // Passed in prefab
@@ -12,6 +12,7 @@ public class FireLime : MonoBehaviour
     public bool useTriggerBox = true; // If true, will check for a collision box before firing. Otherwise, continuously fires limes endlessly
     public float areaWidth = 0;
     public float areaHeight = 0; // Height and width for where the limes will spawn
+    public float despawnTimeVal = 0; // If you want to change the despawn time from the basic 6 seconds
 
     private float timer = 0;
     private bool toFire = false;
@@ -27,7 +28,7 @@ public class FireLime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(useTriggerBox)
+        if (useTriggerBox)
         {
             if (!timerActive && toFire)
             {
@@ -47,17 +48,19 @@ public class FireLime : MonoBehaviour
                     Random.Range(transform.position.y, transform.position.y + areaHeight), transform.position.z);
 
                 GameObject limeProjectile = Instantiate(lime, spawnPos, Quaternion.identity) as GameObject;
-                //limeProjectile.AddComponent<DespawnTimer>();
+                limeProjectile.AddComponent<DespawnTimer>();
+                if(despawnTimeVal > 0)
+                    limeProjectile.GetComponent<DespawnTimer>().despawnTime = despawnTimeVal;
                 //limeProjectile.transform.rotation = Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0));
                 limeProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
                 timerActive = true;
             }
         }
 
-        if(timerActive)
+        if (timerActive)
         {
             timer += Time.deltaTime;
-            if(timer >= timerCheck)
+            if (timer >= timerCheck)
             {
                 timer = 0;
                 timerActive = false;
@@ -67,7 +70,7 @@ public class FireLime : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other == player.GetComponent<Collider>())
+        if (other == player.GetComponent<Collider>())
         {
             toFire = true;
             Debug.Log("enter");
