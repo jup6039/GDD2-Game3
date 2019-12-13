@@ -172,7 +172,7 @@ public class ObjectiveTracker : MonoBehaviour
             sceneHandler.GetComponent<SceneHandler>().LoadNextLevel();
         }
 
-        if (Input.GetKeyDown("r") && (winScreen.gameObject.active || gameOverMenu.gameObject.active))      // restart game
+        if (Input.GetKeyDown("r"))      // restart game
         {
             gameOverMenu.gameObject.SetActive(false);
             winScreen.gameObject.SetActive(false);
