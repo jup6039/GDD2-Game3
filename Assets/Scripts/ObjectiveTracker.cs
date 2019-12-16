@@ -9,6 +9,9 @@ public class ObjectiveTracker : MonoBehaviour
 {
     // Variables
     public GameObject sceneHandler;
+    public GameObject bgMusic;
+    public GameObject loseMusic;
+    public GameObject levelCompMusic;
     public Collider areaCollider;
     //public GameObject[] objectArray = new GameObject[8];
     public List<GameObject> ingredients;
@@ -26,6 +29,9 @@ public class ObjectiveTracker : MonoBehaviour
     private string sceneName;
     private bool didWin;
     private bool nextLevelScreen;
+
+    // Private Music Stuff
+    private bool singleClipPlayed = false;
 
     // Toggles
     /*public Toggle sugarToggle;
@@ -158,6 +164,12 @@ public class ObjectiveTracker : MonoBehaviour
             {
                 nextLevelScreen = true;
                 levelCompleteMenu.gameObject.SetActive(true);
+                bgMusic.GetComponent<AudioSource>().Stop();
+                if(!singleClipPlayed)
+                {
+                    levelCompMusic.GetComponent<AudioSource>().Play();
+                    singleClipPlayed = true;
+                }
             }
             else
             {
@@ -201,6 +213,12 @@ public class ObjectiveTracker : MonoBehaviour
         {
             checklist.gameObject.SetActive(false);
             gameOverMenu.gameObject.SetActive(true);
+            bgMusic.GetComponent<AudioSource>().Stop();
+            if(!singleClipPlayed)
+            {
+                loseMusic.GetComponent<AudioSource>().Play();
+                singleClipPlayed = true;
+            }
         }
     }
 }
