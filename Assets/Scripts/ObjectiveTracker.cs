@@ -13,16 +13,13 @@ public class ObjectiveTracker : MonoBehaviour
     public GameObject loseMusic;
     public GameObject levelCompMusic;
     public Collider areaCollider;
-    //public GameObject[] objectArray = new GameObject[8];
     public List<GameObject> ingredients;
     private List<GameObject> toggles;
-    //public GameObject[] incorrectArray = new GameObject[4];
     public Transform gameOverMenu;
     public Transform levelCompleteMenu;
     public Transform winScreen;
     public Transform checklist;
     public GameObject toggleDefault;
-    //public int sceneCount; // No longer needed, this script accesses the SceneHandler levelAmount variable now
 
     // private stuff
     private Scene currentScene;
@@ -32,12 +29,6 @@ public class ObjectiveTracker : MonoBehaviour
 
     // Private Music Stuff
     private bool singleClipPlayed = false;
-
-    // Toggles
-    /*public Toggle sugarToggle;
-    public Toggle flourToggle;
-    public Toggle milkToggle;
-    public Toggle eggsToggle;*/
 
     // Start is called before the first frame update
     void Start()
@@ -81,15 +72,6 @@ public class ObjectiveTracker : MonoBehaviour
 
             // Add toggles to list
             toggles.Add(ingredientToggle);
-
-            //RectTransform toggleTransform = ingredientToggle.AddComponent<RectTransform>();
-            //ingredientName.anchoredPosition = new Vector2(0, 20 * -i);
-
-            /*Toggle actualToggle = ingredientToggle.AddComponent<Toggle>();
-            actualToggle.isOn = false;
-            actualToggle.interactable = false;
-            actualToggle.graphic = toggleGraphic;
-            actualToggle.targetGraphic = toggleBackGraphic;*/
         }
     }
 
@@ -97,47 +79,6 @@ public class ObjectiveTracker : MonoBehaviour
     void Update()
     {
         // constantly go through array of game objects and check to see if any are inside the objective area
-        /*
-        for (int i = 0; i < 8; i++)
-        {
-            if (areaCollider.bounds.Contains(objectArray[i].transform.position))
-            {
-                //if (incorrectArray.Contains(objectArray[i]))    // game over if object in array is one of objects in incorrect array
-                //{
-                //    checklist.gameObject.SetActive(false);
-                //    gameOverMenu.gameObject.SetActive(true);
-                //}
-                //else 
-                if (objectArray[i].name == "Avocado")        // checkmarks are checked when the ingredient is in the area
-                {
-                    sugarToggle.isOn = true;
-                    objectArray[i].SetActive(false);
-                }
-                else if (objectArray[i].name == "Tomato")
-                {
-                    flourToggle.isOn = true;
-                    objectArray[i].SetActive(false);
-                }
-                else if (objectArray[i].name == "Onion")
-                {
-                    milkToggle.isOn = true;
-                    objectArray[i].SetActive(false);
-                }
-                else if (objectArray[i].name == "Chip")
-                {
-                    eggsToggle.isOn = true;
-                    objectArray[i].SetActive(false);
-                }
-            }
-            else
-            {
-                sugarToggle.isOn = false;       // checkmarks unchecked if ingredient left the area
-                flourToggle.isOn = false;
-                milkToggle.isOn = false;
-                eggsToggle.isOn = false;
-            }
-        }
-        */
         foreach (GameObject food in ingredients)
         {
             if(areaCollider.GetComponent<MeshRenderer>().bounds.Contains(food.transform.position))
